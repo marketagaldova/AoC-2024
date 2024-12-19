@@ -2,5 +2,5 @@ import kotlin.io.path.Path
 import kotlin.io.path.readText
 
 
-val (towels, patterns) = Path("19/input.txt").readText().split("\n\n")
-println(Regex("^(${towels.replace(", ", "|")})+$", RegexOption.MULTILINE).findAll(patterns).count())
+val input = Path("19/input.txt").readText()
+println(Regex("(?m)^(${input.lines()[0].replace(", ","|")})+$").findAll(input).count())
